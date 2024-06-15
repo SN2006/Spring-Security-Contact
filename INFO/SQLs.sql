@@ -1,0 +1,20 @@
+CREATE DATABASE demo_db;
+
+CREATE TABLE IF NOT EXISTS contacts(
+     id BIGINT PRIMARY KEY AUTO_INCREMENT,
+     name VARCHAR(256) NOT NULL,
+     phone VARCHAR(32) NOT NULL,
+     email VARCHAR(256) NOT NULL,
+     password VARCHAR(256) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS roles(
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(256) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS contacts_roles(
+    contact_id BIGINT REFERENCES contacts(id),
+    role_id BIGINT REFERENCES roles(id),
+    PRIMARY KEY(contact_id, role_id)
+);

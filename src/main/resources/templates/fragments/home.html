@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="home" class="container justify-content-center mt-3 mb-3">
+    <div class="container-sm">
+        <div class="container text-center p-3">
+            <div class="container align-items-center justify-content-center">
+                <h1 style="color: white" class="m-5">Contact database</h1>
+                <p
+                        style="color: white"
+                        class="fs-4"
+                        th:if="${contact!=null}"
+                        th:text="${'You logged in as ' + contact.name}"
+                ></p>
+                <a th:href="@{/contacts}" class="btn btn-outline-light btn-lg mt-5">Show contacts</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

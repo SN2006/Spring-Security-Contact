@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="contact_list" class="container-sm">
+    <div class="d-flex flex-column justify-content-around align-items-center">
+        <table class="table table-bordered table-dark p-3 mt-5 mb-5">
+            <thead>
+            <tr class="table-light">
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody th:each="contact : ${contacts}">
+                <tr>
+                    <td th:text="${contact.name}"></td>
+                    <td th:text="${contact.phone}"></td>
+                    <td th:text="${contact.email}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/contacts/edit-form}" class="btn btn-primary btn-lg">Edit My Info</a>
+    </div>
+</div>
+</body>
+</html>
